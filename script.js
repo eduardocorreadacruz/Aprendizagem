@@ -1,8 +1,8 @@
 let currentSlide = 0;  
 
 function showSlide(index) {  
-    const slides = document.getElementById('slides');  
-    const totalSlides = slides.children.length;  
+    let slides = document.getElementById('slides');  
+    let totalSlides = slides.children.length;  
     if (index >= totalSlides) {  
         currentSlide = 0;  
     } else if (index < 0) {  
