@@ -86,14 +86,42 @@ a:hover{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
     gap: 16px;  
 }  
-.bg-white{  
+
+.grid h3{
+    text-align: center;
+}
+
+.servicos_de_programacao{  
     background-color: white;  
     padding: 16px;  
     border-radius: 8px;  
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
-    align-items: center;
-    h3{text-align: center;}
 }  
+
+.banco_de_dados{  
+    background-color: white;  
+    padding: 16px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}  
+
+.algoritmos{  
+    background-color: white;  
+    padding: 16px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}  
+.componentes{  
+    background-color: white;  
+    padding: 16px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}  
+
+
+.bg-white h3{  
+    text-align: center;
+}
 
 .slider{  
     position: relative;  
