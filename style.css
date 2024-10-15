@@ -1,0 +1,227 @@
+body{  
+    font-family: Arial, sans-serif;  
+    background-color: rgb(240, 240, 240); 
+    color: #2d3748;
+    margin: 0;  
+    padding: 0;  
+}  
+
+header{  
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    color: white;  
+    padding: 16px;  
+    text-align: center;  
+    margin-top: -80px;  
+}  
+
+nav ul{  
+    list-style-type: none;  
+    padding: 0;  
+}  
+
+nav ul li{  
+    display: inline;  
+    margin: 0 15px;  
+}  
+
+nav a{  
+    color: white;  
+    text-decoration: none;  
+}  
+
+nav a:hover{  
+    text-decoration: underline;  
+}  
+
+main{  
+    padding: 24px;  
+}  
+
+section{  
+    margin-bottom: 32px;  
+}  
+
+.cabecalho{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #4093ff;
+    color: white;  
+    padding: 16px;  
+    text-align: left;  
+}
+
+h2{  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+h3{  
+    font-size: 20px;  
+    font-weight: bold;  
+    margin-top: 16px;  
+}  
+
+p{  
+    margin: 8px 0;  
+}  
+
+a{
+    padding: 4px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    transition: 0.5s;
+    background-color: #4e72d8;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 6px;
+}
+
+
+.grid{  
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
+    gap: 16px;  
+}  
+.bg-white{  
+    background-color: white;  
+    padding: 16px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    align-items: center;
+    h3{text-align: center;}
+}  
+
+.slider{  
+    position: relative;  
+    overflow: hidden;  
+    margin-top: 32px;  
+}  
+
+.slides-componentes{  
+    display: flex;  
+    transition: transform 0.5s ease;  
+}  
+.slides-algoritmo{  
+    display: flex;  
+    transition: transform 0.5s ease;  
+}  
+.slides-banco{  
+    display: flex;  
+    transition: transform 0.5s ease;  
+}  
+.slides-mais{  
+    display: flex;  
+    transition: transform 0.5s ease;  
+}  
+.slides{  
+    display: flex;  
+    transition: transform 0.5s ease;  
+}  
+
+.slide{  
+    text-align: center;
+    min-width: 100%;  
+    position: relative;  
+}  
+
+.caption{  
+    margin-left: 470px;
+    position: absolute;  
+    bottom: 20px;  
+    left: 20px;  
+    background-color: rgba(0, 0, 0, 0.5);  
+    color: white;  
+    padding: 8px;  
+    border-radius: 4px;  
+}  
+
+footer{  
+    background-color: #2b6cb0;
+    color: white;  
+    padding: 16px;  
+    text-align: center;  
+}  
+
+footer a{  
+    color: white;  
+    text-decoration: none;  
+}  
+
+footer a:hover{  
+    text-decoration: underline;  
+}  
+
+form{  
+    margin-top: 16px;  
+}  
+
+input, textarea {  
+    width: 100%;  
+    padding: 8px;  
+    margin-top: 8px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+}  
+
+button{  
+    background-color: #2b6cb0;
+    color: white;  
+    padding: 10px;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    margin-top: 16px;  
+}  
+
+button:hover{  
+    background-color: #2c5282;
+}  
+
+
+
+.redes_sociais{
+    background-color: rgb(0, 0, 0);
+}
+
+.redes_sociais:hover{
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+}
+
+.whatsapp-link{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+    padding: 0px;
+    border: #25d366;
+}
+
+.whatsapp-link:hover{
+    background-color: #25d366;
+    border-radius: 70px;
+    padding: 3px;
+}
+
+.fa-whatsapp{
+    margin-top: 16px;
+}
+
+@media (max-width: 500px) {  
+    body{
+        margin-right: -10px;
+    }
+}
