@@ -18,3 +18,24 @@ function nextSlide() {
 }  
 
 setInterval(nextSlide, 3000);
+
+        document.getElementById('linkButton').addEventListener('click', function() {  
+            let linkContainer = document.getElementById('linkContainer');  
+            if (linkContainer.style.display === 'none') {  
+                linkContainer.style.display = 'block';
+            } else {  
+                linkContainer.style.display = 'none';  
+            }  
+        });  
+
+function toggleMenu() {  
+    let menu = document.getElementById('menuLateral');  
+    let content = document.getElementById('mainContent');  
+    menu.classList.toggle('active'); 
+
+    if (menu.classList.contains('active')) {  
+        content.style.marginLeft = "250px";
+    } else {  
+        content.style.marginLeft = "0";  
+    }  
+}  
