@@ -288,7 +288,6 @@ button:hover {
 	position: fixed;
 	height: 100%;
 	left: -250px;
-	transition: left 0.3s;
 	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 	z-index: 999;
 	margin-left: -2%;
@@ -296,6 +295,8 @@ button:hover {
 
 .menu-lateral.active {
 	left: 0;
+	transition: 0.5s;
+
 }
 
 .menu-lateral a {
@@ -303,6 +304,7 @@ button:hover {
 	padding: 15px;
 	color: #333;
 	text-decoration: none;
+	transition: 0.5s;
 }
 
 .menu-lateral a:hover {
@@ -345,6 +347,54 @@ button:hover {
 	color: black;
 	text-decoration: none;
 }
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: black;
+}
+
+.tab button:hover {
+  background-color: #4093ff;
+}
+
+.tab button.active {
+  background-color: #817e7e;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #ffff;
+}
+
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.topright:hover {color: #4093ff;}
 
 @media (max-width: 500px) {
 	body {
