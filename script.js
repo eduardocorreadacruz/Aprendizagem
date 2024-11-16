@@ -65,3 +65,4 @@ function openCity(evt, cityName) {
   }
   
   document.getElementById("defaultOpen").click();
+
