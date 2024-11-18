@@ -480,6 +480,12 @@ button:hover {
 	margin-bottom: 20px;
 }
 
+.mapa{
+	text-align: center;
+	margin-bottom: 50px;
+}
+	
+
 @media (max-width: 500px) {
 	body {
 		margin-right: -10px;
