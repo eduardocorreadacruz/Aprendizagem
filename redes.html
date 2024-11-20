@@ -8,153 +8,134 @@
       <title>Mais Informação</title>
    </head>
    <body>
-    <div class="cabecalho">
-        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-        <div class="menu-lateral" id="menuLateral">
-           <br>
-           <br>
-           <br>
-           <a href="index.html">Home</a>
-        </div>
-        <h1>Desenvolvimento De Sistemas</h1>
-        <a href="eletronica.html">Eletronica</a>
-        <a href="redes.html">Redes</a>
-        <a href="banco.html">Bancos De Dados</a>
-        <a href="Algoritmos.html">Algoritmos e fluxogramas</a>
-        <a href="programacao.html">programação</a>
-        </div>
-
-
-    </head>  
-    <body>  
-    
-        <h1>Configuração da Rede Interna</h1>  
-    
-        <h2>Conceitos Básicos</h2>  
-        <h3>Conceito de Servidor</h3>  
-        <p>Um <strong>servidor</strong> é um sistema computacional ou software que fornece serviços a outros sistemas, conhecidos como <strong>clientes</strong>, em uma rede. Eles podem oferecer uma variedade de serviços, como armazenamento de dados, aplicações, e web.</p>  
-    
-        <h3>DNS (Domain Name System)</h3>  
-        <p>O <strong>DNS</strong> é um sistema que traduz nomes de domínio (como <code>www.exemplo.com</code>) em endereços IP (como <code>192.168.1.1</code>). Isso permite que os usuários acessem recursos usando nomes amigáveis.</p>  
-    
-        <h3>HTTP (Hypertext Transfer Protocol)</h3>  
-        <p>O <strong>HTTP</strong> é um protocolo de comunicação utilizado para a transferência de informações na web. Ele permite que os navegadores acessem recursos do servidor, como páginas HTML, imagens, e outros conteúdos.</p>  
-    
-        <h3>DHCP (Dynamic Host Configuration Protocol)</h3>  
-        <p>O <strong>DHCP</strong> é um protocolo de rede que permite a configuração automática de dispositivos em uma rede. Ele atribui endereços IP e outras informações de configuração a dispositivos clientes automaticamente.</p>  
-    
-        <h2>Equipamentos e suas Funções</h2>  
-        <table>  
-            <thead>  
-                <tr>  
-                    <th>Equipamento</th>  
-                    <th>Função</th>  
-                </tr>  
-            </thead>  
-            <tbody>  
-                <tr>  
-                    <td>Roteador</td>  
-                    <td>Encaminha pacotes de dados entre diferentes redes.</td>  
-                </tr>  
-                <tr>  
-                    <td>Switch</td>  
-                    <td>Conecta dispositivos em uma rede local e permite comunicação.</td>  
-                </tr>  
-                <tr>  
-                    <td>PCs</td>  
-                    <td>Dispositivos clientes que acessam os serviços do servidor.</td>  
-                </tr>  
-                <tr>  
-                    <td>Servidor Web</td>  
-                    <td>Armazena e fornece páginas web (HTTP).</td>  
-                </tr>  
-                <tr>  
-                    <td>Servidor DNS</td>  
-                    <td>Resolve nomes de domínio em endereços IP.</td>  
-                </tr>  
-                <tr>  
-                    <td>Servidor DHCP</td>  
-                    <td>Atribui endereços IP dinâmicos e configurações.</td>  
-                </tr>  
-            </tbody>  
-        </table>  
-    
-        <h2>Configuração dos Servidores</h2>  
-        <h3>Servidor DNS</h3>  
-        <p>Configuração do Servidor DNS:</p>  
-        <ul>  
-            <li><strong>IP:</strong> 192.168.1.2</li>  
-            <li><strong>Registro DNS:</strong> www.meusite.com → 192.168.1.10</li>  
-        </ul>  
-    
-        <h3>Servidor HTTP</h3>  
-        <p>Configuração do Servidor Web:</p>  
-        <ul>  
-            <li><strong>IP:</strong> 192.168.1.10</li>  
-            <li><strong>Serviço HTTP:</strong> Habilitado</li>  
-        </ul>  
-    
-        <h3>Servidor DHCP</h3>  
-        <p>Configuração do Servidor DHCP:</p>  
-        <ul>  
-            <li><strong>IP:</strong> 192.168.1.5</li>  
-            <li><strong>Pool de IP:</strong> 192.168.1.20 a 192.168.1.50</li>  
-            <li><strong>Máscara de Sub-rede:</strong> 255.255.255.0</li>  
-            <li><strong>Gateway:</strong> 192.168.1.1</li>  
-            <li><strong>DNS:</strong> 192.168.1.2</li>  
-        </ul>  
-    
-        <h2>Configuração do Roteador</h2>  
-        <p>Código de configuração básica do roteador:</p>  
-        <pre><code>  
-    enable  
-    configure terminal  
-    interface gig0/0  
-    ip address 192.168.1.1 255.255.255.0  
-    no shutdown  
-    exit  
-        </code></pre>  
-
-        <h3>crimpagem</h3>
-        <img src="./img/crimpagem.jfif" alt="">
-        <h3>pinagem</h3>
-        <img src="./img/pinagem.jpg" alt="">
-
-
-        <h1>Modelos de Rede: OSI e TCP/IP</h1>  
-    
-        <h2>Modelo OSI (Open Systems Interconnection)</h2>  
-        <p>O Modelo OSI é uma arquitetura de rede que divide o processo de comunicação em sete camadas distintas, cada uma responsável por diferentes aspectos da comunicação de rede:</p>  
-        <ol>  
-            <li><strong>Camada Física (Layer 1):</strong> Transmissão de dados brutos através de meios físicos (ex.: cabos, sinais).</li>  
-            <li><strong>Camada de Enlace de Dados (Layer 2):</strong> Transferência de dados entre nós na mesma rede e detecção de erros (ex.: Ethernet, PPP).</li>  
-            <li><strong>Camada de Rede (Layer 3):</strong> Gerenciamento do roteamento de dados entre redes (ex.: IP).</li>  
-            <li><strong>Camada de Transporte (Layer 4):</strong> Garantia de transferência confiável de dados (ex.: TCP, UDP).</li>  
-            <li><strong>Camada de Sessão (Layer 5):</strong> Controle das conexões entre computadores (estabelecimento e término de sessões).</li>  
-            <li><strong>Camada de Apresentação (Layer 6):</strong> Formatação e tradução dos dados (inclui criptografia).</li>  
-            <li><strong>Camada de Aplicação (Layer 7):</strong> Fornecimento de serviços de rede diretamente para as aplicações (ex.: HTTP, FTP, SMTP).</li>  
-        </ol>  
-    
-        <h2>Modelo TCP/IP</h2>  
-        <p>O Modelo TCP/IP é um conjunto de protocolos que governam a comunicação pela internet, organizado em quatro camadas:</p>  
-        <ol>  
-            <li><strong>Camada de Aplicação:</strong> Equivalente às camadas 5, 6 e 7 do modelo OSI, inclui protocolos como HTTP, FTP, SMTP e DNS.</li>  
-            <li><strong>Camada de Transporte:</strong> Equivalente à camada 4 do modelo OSI; garante a entrega confiável dos dados. Protocolos principais: TCP (confiável) e UDP (rápido, mas menos confiável).</li>  
-            <li><strong>Camada de Internet:</strong> Equivalente à camada 3 do modelo OSI; gerencia endereçamento e roteamento de pacotes de dados, com o protocolo principal sendo o IP (IPv4 ou IPv6).</li>  
-            <li><strong>Camada de Acesso à Rede:</strong> Combina as funções das camadas 1 e 2 do modelo OSI, tratando a comunicação do host com a rede (ex.: Ethernet, ARP).</li>  
-        </ol>  
-    
-
-      <footer>
-      <p>&copy; 2024 Desenvolvimento De Sistemas. Todos os direitos reservados.</p>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-      <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5548991799975" target="_blank">
-      <i class="fa fa-whatsapp"></i>
-      </a>
-      <p>Telefone: (11) 1234-5678</p>
-      <br>
-      <a href="https://github.com/eduardocorreadacruz" target="_blank" class="redes_sociais">GitHub</a>
-      <a href="https://www.linkedin.com/in/eduardo-correa-da-cruz-044b711a0/" target="_blank" class="redes_sociais">LinkedIn</a>
-      </footer>
+      <div class="cabecalho">
+         <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+         <div class="menu-lateral" id="menuLateral">
+            <br>
+            <br>
+            <br>
+            <a href="index.html">Home</a>
+         </div>
+         <h1>Desenvolvimento De Sistemas</h1>
+         <a href="eletronica.html">Eletronica</a>
+         <a href="redes.html">Redes</a>
+         <a href="banco.html">Bancos De Dados</a>
+         <a href="Algoritmos.html">Algoritmos e fluxogramas</a>
+         <a href="programacao.html">programação</a>
+      </div>
+      </head>  
+      <body>
+         <h1>Configuração da Rede Interna</h1>
+         <h2>Conceitos Básicos</h2>
+         <h3>Conceito de Servidor</h3>
+         <p>Um <strong>servidor</strong> é um sistema computacional ou software que fornece serviços a outros sistemas, conhecidos como <strong>clientes</strong>, em uma rede. Eles podem oferecer uma variedade de serviços, como armazenamento de dados, aplicações, e web.</p>
+         <h3>DNS (Domain Name System)</h3>
+         <p>O <strong>DNS</strong> é um sistema que traduz nomes de domínio (como <code>www.exemplo.com</code>) em endereços IP (como <code>192.168.1.1</code>). Isso permite que os usuários acessem recursos usando nomes amigáveis.</p>
+         <h3>HTTP (Hypertext Transfer Protocol)</h3>
+         <p>O <strong>HTTP</strong> é um protocolo de comunicação utilizado para a transferência de informações na web. Ele permite que os navegadores acessem recursos do servidor, como páginas HTML, imagens, e outros conteúdos.</p>
+         <h3>DHCP (Dynamic Host Configuration Protocol)</h3>
+         <p>O <strong>DHCP</strong> é um protocolo de rede que permite a configuração automática de dispositivos em uma rede. Ele atribui endereços IP e outras informações de configuração a dispositivos clientes automaticamente.</p>
+         <h2>Equipamentos e suas Funções</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Equipamento</th>
+                  <th>Função</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Roteador</td>
+                  <td>Encaminha pacotes de dados entre diferentes redes.</td>
+               </tr>
+               <tr>
+                  <td>Switch</td>
+                  <td>Conecta dispositivos em uma rede local e permite comunicação.</td>
+               </tr>
+               <tr>
+                  <td>PCs</td>
+                  <td>Dispositivos clientes que acessam os serviços do servidor.</td>
+               </tr>
+               <tr>
+                  <td>Servidor Web</td>
+                  <td>Armazena e fornece páginas web (HTTP).</td>
+               </tr>
+               <tr>
+                  <td>Servidor DNS</td>
+                  <td>Resolve nomes de domínio em endereços IP.</td>
+               </tr>
+               <tr>
+                  <td>Servidor DHCP</td>
+                  <td>Atribui endereços IP dinâmicos e configurações.</td>
+               </tr>
+            </tbody>
+         </table>
+         <h2>Configuração dos Servidores</h2>
+         <h3>Servidor DNS</h3>
+         <p>Configuração do Servidor DNS:</p>
+         <ul>
+            <li><strong>IP:</strong> 192.168.1.2</li>
+            <li><strong>Registro DNS:</strong> www.meusite.com → 192.168.1.10</li>
+         </ul>
+         <h3>Servidor HTTP</h3>
+         <p>Configuração do Servidor Web:</p>
+         <ul>
+            <li><strong>IP:</strong> 192.168.1.10</li>
+            <li><strong>Serviço HTTP:</strong> Habilitado</li>
+         </ul>
+         <h3>Servidor DHCP</h3>
+         <p>Configuração do Servidor DHCP:</p>
+         <ul>
+            <li><strong>IP:</strong> 192.168.1.5</li>
+            <li><strong>Pool de IP:</strong> 192.168.1.20 a 192.168.1.50</li>
+            <li><strong>Máscara de Sub-rede:</strong> 255.255.255.0</li>
+            <li><strong>Gateway:</strong> 192.168.1.1</li>
+            <li><strong>DNS:</strong> 192.168.1.2</li>
+         </ul>
+         <h2>Configuração do Roteador</h2>
+         <p>Código de configuração básica do roteador:</p>
+         <pre><code>  
+            enable  
+            configure terminal  
+            interface gig0/0  
+            ip address 192.168.1.1 255.255.255.0  
+            no shutdown  
+            exit  
+        </code></pre>
+         <h3>crimpagem</h3>
+         <img src="./img/crimpagem.jfif" alt="">
+         <h3>pinagem</h3>
+         <img src="./img/pinagem.jpg" alt="">
+         <h1>Modelos de Rede: OSI e TCP/IP</h1>
+         <h2>Modelo OSI (Open Systems Interconnection)</h2>
+         <p>O Modelo OSI é uma arquitetura de rede que divide o processo de comunicação em sete camadas distintas, cada uma responsável por diferentes aspectos da comunicação de rede:</p>
+         <ol>
+            <li><strong>Camada Física (Layer 1):</strong> Transmissão de dados brutos através de meios físicos (ex.: cabos, sinais).</li>
+            <li><strong>Camada de Enlace de Dados (Layer 2):</strong> Transferência de dados entre nós na mesma rede e detecção de erros (ex.: Ethernet, PPP).</li>
+            <li><strong>Camada de Rede (Layer 3):</strong> Gerenciamento do roteamento de dados entre redes (ex.: IP).</li>
+            <li><strong>Camada de Transporte (Layer 4):</strong> Garantia de transferência confiável de dados (ex.: TCP, UDP).</li>
+            <li><strong>Camada de Sessão (Layer 5):</strong> Controle das conexões entre computadores (estabelecimento e término de sessões).</li>
+            <li><strong>Camada de Apresentação (Layer 6):</strong> Formatação e tradução dos dados (inclui criptografia).</li>
+            <li><strong>Camada de Aplicação (Layer 7):</strong> Fornecimento de serviços de rede diretamente para as aplicações (ex.: HTTP, FTP, SMTP).</li>
+         </ol>
+         <h2>Modelo TCP/IP</h2>
+         <p>O Modelo TCP/IP é um conjunto de protocolos que governam a comunicação pela internet, organizado em quatro camadas:</p>
+         <ol>
+            <li><strong>Camada de Aplicação:</strong> Equivalente às camadas 5, 6 e 7 do modelo OSI, inclui protocolos como HTTP, FTP, SMTP e DNS.</li>
+            <li><strong>Camada de Transporte:</strong> Equivalente à camada 4 do modelo OSI; garante a entrega confiável dos dados. Protocolos principais: TCP (confiável) e UDP (rápido, mas menos confiável).</li>
+            <li><strong>Camada de Internet:</strong> Equivalente à camada 3 do modelo OSI; gerencia endereçamento e roteamento de pacotes de dados, com o protocolo principal sendo o IP (IPv4 ou IPv6).</li>
+            <li><strong>Camada de Acesso à Rede:</strong> Combina as funções das camadas 1 e 2 do modelo OSI, tratando a comunicação do host com a rede (ex.: Ethernet, ARP).</li>
+         </ol>
+         <footer>
+            <p>&copy; 2024 Desenvolvimento De Sistemas. Todos os direitos reservados.</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+            <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5548991799975" target="_blank">
+            <i class="fa fa-whatsapp"></i>
+            </a>
+            <p>Telefone: (11) 1234-5678</p>
+            <br>
+            <a href="https://github.com/eduardocorreadacruz" target="_blank" class="redes_sociais">GitHub</a>
+            <a href="https://www.linkedin.com/in/eduardo-correa-da-cruz-044b711a0/" target="_blank" class="redes_sociais">LinkedIn</a>
+         </footer>
    </body>
 </html>
