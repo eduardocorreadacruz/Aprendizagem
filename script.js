@@ -1,3 +1,4 @@
+// ----------------------- CARROSSEL -----------------------
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -19,9 +20,9 @@ function nextSlide() {
 
 setInterval(nextSlide, 3000);
 
+// ----------------------- GALLERIA DE IMAGENS -----------------------
 function galeriaDeImagens() {
    document.getElementById('adicionarBtn').addEventListener('click', function () {
-
       let imagemInput = document.getElementById('imagemInput');
       let imagemUrl = imagemInput.value;
 
@@ -37,62 +38,17 @@ function galeriaDeImagens() {
 
 galeriaDeImagens();
 
-function bubbleSort(arr) {
-   let n = arr.length;
-   for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n - 1 - i; j++) {
-         if (arr[j] > arr[j + 1]) {
-            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-         }
-      }
-   }
-   return arr;
-}
-
-function insertionSort(arr) {
-   let steps = [];
-   for (let i = 1; i < arr.length; i++) {
-      let key = arr[i];
-      let j = i - 1;
-      while (j >= 0 && arr[j] > key) {
-         arr[j + 1] = arr[j];
-         j--;
-         steps.push([...arr]);
-      }
-      arr[j + 1] = key;
-      steps.push([...arr]);
-   }
-   return steps;
-}
-
-function selectionSort(arr) {
-   let steps = [];
-   let n = arr.length;
-   for (let i = 0; i < n - 1; i++) {
-      let minIndex = i;
-      for (let j = i + 1; j < n; j++) {
-         if (arr[j] < arr[minIndex]) {
-            minIndex = j;
-         }
-      }
-
-      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      steps.push([...arr]);
-   }
-   return steps;
-}
-
+// ----------------------- ALGORITMOS DE ORDENAÇÃO -----------------------
 function bubbleSort(arr) {
    let steps = [];
    let n = arr.length;
    for (let i = 0; i < n - 1; i++) {
       for (let j = 0; j < n - i - 1; j++) {
          if (arr[j] > arr[j + 1]) {
-            // Troca
             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
          }
       }
-      steps.push([...arr]); // Armazena o estado atual do array
+      steps.push([...arr]);
    }
    return steps;
 }
@@ -107,7 +63,7 @@ function insertionSort(arr) {
          j--;
       }
       arr[j + 1] = key;
-      steps.push([...arr]); // Armazena o estado atual do array
+      steps.push([...arr]);
    }
    return steps;
 }
@@ -122,9 +78,9 @@ function selectionSort(arr) {
             minIndex = j;
          }
       }
-      // Troca
+
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      steps.push([...arr]); // Armazena o estado atual do array
+      steps.push([...arr]);
    }
    return steps;
 }
@@ -159,7 +115,7 @@ function sortNumbers() {
    document.getElementById('results').innerHTML = resultsHtml;
 }
 
-
+// ----------------------- GERAR MATRIZ IMPAR E PAR -----------------------
 let matriz5 = [
    [0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0],
@@ -217,13 +173,13 @@ function somarPares() {
    }
    let somaParContainer = document.getElementById('somaParContainer');
    somaParContainer.textContent = somaPar;
-   let somaImparsomaContainer = document.getElementById('somaImparContainer');
+   let somaImparContainer = document.getElementById('somaImparContainer');
    somaImparContainer.textContent = somaImpar;
 }
 
 document.getElementById('gerarMatrizes2Btn').addEventListener('click', gerarMatriz4);
 
-
+// ----------------------- GERAR MATRIZ E SOMA DIVISIVEIS POR 3 -----------------------
 let matriz4 = [
    [0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0],
@@ -270,12 +226,13 @@ function somarTres() {
    document.getElementById('somaDivisiveisPor3').innerText = `A soma dos elementos divisíveis por 3 é: ${soma}`;
 }
 
+// Event listener para gerar a matriz 3 e somar elementos divisíveis por 3
 document.getElementById('gerarMatrizes1Btn').addEventListener('click', function () {
    gerarMatriz3();
    somarTres();
 });
 
-
+// ----------------------- GERAR MATRIZES 1 E 2 E SOMAR -----------------------
 let matriz1 = [
    [0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0],
@@ -309,7 +266,7 @@ let matriz3 = [
 function gerarMatriz1() {
    for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
-         matriz1[i][j] = gerarAleatorio(20, 1)
+         matriz1[i][j] = gerarAleatorio(20, 1);
       }
    }
    return matriz1;
@@ -318,7 +275,7 @@ function gerarMatriz1() {
 function gerarMatriz2() {
    for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
-         matriz2[i][j] = gerarAleatorio(20, 1)
+         matriz2[i][j] = gerarAleatorio(20, 1);
       }
    }
    return matriz2;
@@ -356,168 +313,169 @@ document.getElementById('gerarMatrizesBtn').addEventListener('click', () => {
    exibirMatriz(matriz3, 'matriz3');
 });
 
+// ----------------------- ORDENAÇÃO CRESCENTE E DECRESCENTE -----------------------
 function gerarNum(max, min) {
    let valorAleatorio = Math.floor(Math.random() * (max - min + 1) + min);
-   return valorAleatorio
+   return valorAleatorio;
 }
 
 function ordenarCrescente(array) {
    let valorAtual;
    for (let j = array.length - 1; j > 0; j--) {
-      for (let i = 0; i < array.length - 1; i++) {
-         if (array[i] > array[i + 1]) {
-            valorAtual = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = valorAtual;
-         }
-      }
-   }
-   return array;
+    for (let i = 0; i < array.length - 1; i++) {
+       if (array[i] > array[i + 1]) {
+          valorAtual = array[i];
+          array[i] = array[i + 1];
+          array[i + 1] = valorAtual;
+       }
+    }
+ }
+ return array;
 }
 
 function ordenarDecrescente(array) {
-   let valor_atual;
-   for (let j = array.length - 1; j > 0; j--) {
-      for (let i = 0; i < array.length - 1; i++) {
-         if (array[i] < array[i + 1]) {
-            valor_atual = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = valor_atual;
-         }
-      }
-   }
-   return array;
+ let valor_atual;
+ for (let j = array.length - 1; j > 0; j--) {
+    for (let i = 0; i < array.length - 1; i++) {
+       if (array[i] < array[i + 1]) {
+          valor_atual = array[i];
+          array[i] = array[i + 1];
+          array[i + 1] = valor_atual;
+       }
+    }
+ }
+ return array;
 }
 
 function configurarBotaoOrdenarCrescente() {
-   let button = document.getElementById("ordenar");
-   if (button) {
-      button.addEventListener("click", () => {
-         let array = [];
-         for (let i = 0; i < 6; i++) {
-            array[i] = gerarNum(10, 1);
-         }
+ let button = document.getElementById("ordenar");
+ if (button) {
+    button.addEventListener("click", () => {
+       let array = [];
+       for (let i = 0; i < 6; i++) {
+          array[i] = gerarNum(10, 1);
+       }
 
-         let visu = document.getElementById("visu");
-         visu.textContent = `Antes de ser ordenado: [${array}]`;
+       let visu = document.getElementById("visu");
+       visu.textContent = `Antes de ser ordenado: [${array}]`;
 
-         array = ordenarCrescente(array);
+       array = ordenarCrescente(array);
 
-         let res = document.getElementById("res");
-         res.textContent = `Após ser ordenado: [${array}]`;
-      });
-   }
+       let res = document.getElementById("res");
+       res.textContent = `Após ser ordenado: [${array}]`;
+    });
+ }
 }
 
 function configurarBotaoOrdenarDecrescente() {
-   let button = document.getElementById("ordenar2");
-   if (button) {
-      button.addEventListener("click", () => {
-         let array = [];
-         for (let i = 0; i < 6; i++) {
-            array[i] = gerarNum(10, 1);
-         }
+ let button = document.getElementById("ordenar2");
+ if (button) {
+    button.addEventListener("click", () => {
+       let array = [];
+       for (let i = 0; i < 6; i++) {
+          array[i] = gerarNum(10, 1);
+       }
 
-         let visu2 = document.getElementById("visu2");
-         visu2.textContent = `Antes de ser ordenado: [${array}]`;
+       let visu2 = document.getElementById("visu2");
+       visu2.textContent = `Antes de ser ordenado: [${array}]`;
 
-         array = ordenarDecrescente(array);
+       array = ordenarDecrescente(array);
 
-         let res2 = document.getElementById("res2");
-         res2.textContent = `Após ser ordenado: [${array}]`;
-      });
-   }
+       let res2 = document.getElementById("res2");
+       res2.textContent = `Após ser ordenado: [${array}]`;
+    });
+ }
 }
 
-configurarBotaoOrdenarCrescente()
-configurarBotaoOrdenarDecrescente()
+configurarBotaoOrdenarCrescente();
+configurarBotaoOrdenarDecrescente();
 
+// ----------------------- ORDENAR MATRIZ -----------------------
 function ordenarMatriz(crescente) {
-   let matriz = gerarMatriz();
-   let visu = document.getElementById(crescente ? "visuMatrizCrescente" : "visuMatrizDecrescente");
-   visu.innerHTML = `Antes de ser ordenado:<br>${formatarMatriz(matriz)}`;
+ let matriz = gerarMatriz();
+ let visu = document.getElementById(crescente ? "visuMatrizCrescente" : "visuMatrizDecrescente");
+ visu.innerHTML = `Antes de ser ordenado:<br>${formatarMatriz(matriz)}`;
 
-   matriz = ordenar(matriz, crescente);
+ matriz = ordenar(matriz, crescente);
 
-   let res = document.getElementById(crescente ? "resMatrizCrescente" : "resMatrizDecrescente");
-   res.innerHTML = `Após ser ordenado:<br>${formatarMatriz(matriz)}`;
+ let res = document.getElementById(crescente ? "resMatrizCrescente" : "resMatrizDecrescente");
+ res.innerHTML = `Após ser ordenado:<br>${formatarMatriz(matriz)}`;
 }
 
 function configurarBotoes() {
-   document.getElementById("ordenarMatrizCrescente").addEventListener("click", () => ordenarMatriz(true));
-   document.getElementById("ordenarMatrizDecrescente").addEventListener("click", () => ordenarMatriz(false));
+ document.getElementById("ordenarMatrizCrescente").addEventListener("click", () => ordenarMatriz(true));
+ document.getElementById("ordenarMatrizDecrescente").addEventListener("click", () => ordenarMatriz(false));
 }
 
 configurarBotoes();
 
+// ----------------------- MENU -----------------------
 document.getElementById('linkButton').addEventListener('click', function () {
-   let linkContainer = document.getElementById('linkContainer');
-   if (linkContainer.style.display === 'none') {
-      linkContainer.style.display = 'block';
-   } else {
-      linkContainer.style.display = 'none';
-   }
+ let linkContainer = document.getElementById('linkContainer');
+ if (linkContainer.style.display === 'none') {
+    linkContainer.style.display = 'block';
+ } else {
+    linkContainer.style.display = 'none';
+ }
 });
 
 function toggleMenu() {
-   let menu = document.getElementById('menuLateral');
-   let content = document.getElementById('mainContent');
-   menu.classList.toggle('active');
+ let menu = document.getElementById('menuLateral');
+ let content = document.getElementById('mainContent');
+ menu.classList.toggle('active');
 
-   if (menu.classList.contains('active')) {
-      content.style.marginLeft = "250px";
-   } else {
-      content.style.marginLeft = "0";
-   }
+ if (menu.classList.contains('active')) {
+    content.style.marginLeft = "250px";
+ } else {
+    content.style.marginLeft = "0";
+ }
 }
 
-document.querySelectorAll('.ancor').forEach(anchor => {
-   anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-         behavior: 'smooth'
-      });
-   });
-});
-
+// ----------------------- ABAS -----------------------
 function openTabs(evt, tabsName) {
-   let i, tabcontent, tablinks;
-   tabcontent = document.getElementsByClassName("tabcontent");
-   for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+   // Esconder todas as abas
+   let tabContent = document.getElementsByClassName("tabcontent");
+   for (let i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
    }
-   tablinks = document.getElementsByClassName("tablinks");
-   for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+   // Remover a classe "active" de todos os botões de abas
+   let tabLinks = document.getElementsByClassName("tablink");
+   for (let i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
    }
+
+   // Mostrar a aba atual e adicionar a classe "active" ao botão que abriu a aba
    document.getElementById(tabsName).style.display = "block";
    evt.currentTarget.className += " active";
 }
 
-document.getElementById("defaultOpen").click();
+// Configurar a aba padrão ao carregar a página
+document.addEventListener("DOMContentLoaded", function () {
+   document.getElementById("defaultOpen").click();
+});
 
-function gerarNum(max, min) {
-   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function ordenar(matriz, crescente = true) {
-   for (let i = 0; i < matriz.length; i++) {
-      matriz[i].sort((a, b) => crescente ? a - b : b - a);
-   }
-   return matriz;
-}
-
+// ----------------------- FORMATAR MATRIZ PARA EXIBIÇÃO -----------------------
 function formatarMatriz(matriz) {
-   return matriz.map(linha => linha.join(", ")).join("<br>");
+   let html = '<table>';
+   for (let i = 0; i < matriz.length; i++) {
+      html += '<tr>';
+      for (let j = 0; j < matriz[i].length; j++) {
+         html += `<td>${matriz[i][j]}</td>`;
+      }
+      html += '</tr>';
+   }
+   html += '</table>';
+   return html;
 }
 
+// ----------------------- GERAÇÃO DE MATRIZ ALEATÓRIA -----------------------
 function gerarMatriz() {
    let matriz = [];
-   for (let i = 0; i < 3; i++) {
+   for (let i = 0; i < 7; i++) {
       let linha = [];
-      for (let j = 0; j < 3; j++) {
-         linha[j] = gerarNum(10, 1);
+      for (let j = 0; j < 7; j++) {
+         linha.push(gerarAleatorio(1, 50));
       }
       matriz.push(linha);
    }
