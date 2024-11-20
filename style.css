@@ -555,4 +555,54 @@ pre {
 	body {
 		margin-right: -10px;
 	}
+	
+	header {
+		padding: 10px;
+		font-size: 18px;
+	}
+	
+	nav ul {
+		padding: 0;
+	}
+	
+	nav ul li {
+		display: block;
+		margin: 5px 0;
+	}
+	
+	main {
+		margin-left: 8px;
+		padding: 16px;
+	}
+	
+	.grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.whatsapp-link {
+		width: 50px;
+		height: 50px;
+		font-size: 24px;
+	}
+	
+	footer {
+		padding: 12px;
+		font-size: 14px;
+	}
+
+	.tab {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	.tab button {
+		padding: 10px;
+		font-size: 14px;
+		width: 100%;
+	}
+	
+	.tabcontent {
+		padding: 10px;
+	
+	}
 }
