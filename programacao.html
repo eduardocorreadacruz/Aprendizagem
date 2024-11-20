@@ -8,73 +8,131 @@
       <title>programação</title>
    </head>
    <body>
-    <div class="cabecalho">
-        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-        <div class="menu-lateral" id="menuLateral">
-           <br>
-           <br>
-           <br>
-           <a href="index.html">Home</a>
-        </div>
-        <h1>Desenvolvimento De Sistemas</h1>
-        <a href="eletronica.html">Eletronica</a>
-        <a href="redes.html">Redes</a>
-        <a href="banco.html">Bancos De Dados</a>
-        <a href="Algoritmos.html">Algoritmos e fluxogramas</a>
-        <a href="programacao.html">programação</a>
-        </div>
-
-        <article>
-         <hr>
-         <h1>Um pouco de nossa programação:</h1>
-         <p>Visando nos integrar no mercado mundial tecnológico com agilidade e proatividade, nossa linguagem base para back-end e HTML dinâmico é o JavaScript, com um conhecimento avançado na utilização da placa de prototipagem Arduíno, a linguagem C++. Por isso, queremos demonstrar nossa capacidade de criação de diversos algorítmos nessas duas diferentes linguagens. Um exemplo de nossa programação em JavaScript dinâmico está a seguir:</p><br>
-         <div class="inDiv">
-             <h4>Ordenação de números aleatórios em um Array de modo crescente</h4>
-             <button id="ordenar">Ordenar</button>
-             <div id="visu"></div>
-             <div id="res"></div>
+      <div class="cabecalho">
+         <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+         <div class="menu-lateral" id="menuLateral">
+            <br>
+            <br>
+            <br>
+            <a href="index.html">Home</a>
          </div>
-         <br><br>
-         <div class="inDiv2">
-             <h4>Ordenação de números aleatórios em um Array de modo decrescente</h4>
-             <button id="ordenar2">Ordenar</button>
-             <div id="visu2"></div>
-             <div id="res2"></div>
-         </div>
-         <br><br>
-         <h2>Ordenar Matriz 3x3 Crescente</h2>
-         <button id="ordenarMatrizCrescente">Ordenar</button>
-         <div id="visuMatrizCrescente"></div>
-         <div id="resMatrizCrescente"></div>
-     
-         <h2>Ordenar Matriz 3x3 Decrescente</h2>
-         <button id="ordenarMatrizDecrescente">Ordenar</button>
-         <div id="visuMatrizDecrescente"></div>
-         <div id="resMatrizDecrescente"></div>
-
-         
-         <h1>Outros programas não incorporados:</h1>
-         <div class="progNinco">
-             <ol>
-                 <li>Algorítmos de cálculo de área de diferentes formas geométricas</li>
-                 <li>Conhecimento em diversos métodos de ordenação de Array's de forma dinâmica e acessível</li>
-             </ol>
-         </div>
-         <hr>
-         
-
-
-
-      <footer>
-      <p>&copy; 2024 Desenvolvimento De Sistemas. Todos os direitos reservados.</p>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-      <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5548991799975" target="_blank">
-      <i class="fa fa-whatsapp"></i>
-      </a>
-      <p>Telefone: (11) 1234-5678</p>
+         <h1>Desenvolvimento De Sistemas</h1>
+         <a href="eletronica.html">Eletronica</a>
+         <a href="redes.html">Redes</a>
+         <a href="banco.html">Bancos De Dados</a>
+         <a href="Algoritmos.html">Algoritmos e fluxogramas</a>
+         <a href="programacao.html">programação</a>
+      </div>
+      <article>
+      <hr>
+      <h1>Um pouco de nossa programação:</h1>
+      <p>Visando nos integrar no mercado mundial tecnológico com agilidade e proatividade, nossa linguagem base para back-end e HTML dinâmico é o JavaScript, com um conhecimento avançado na utilização da placa de prototipagem Arduíno, a linguagem C++. Por isso, queremos demonstrar nossa capacidade de criação de diversos algorítmos nessas duas diferentes linguagens. Um exemplo de nossa programação em JavaScript dinâmico está a seguir:</p>
       <br>
-      <a href="https://github.com/eduardocorreadacruz" target="_blank" class="redes_sociais">GitHub</a>
-      <a href="https://www.linkedin.com/in/eduardo-correa-da-cruz-044b711a0/" target="_blank" class="redes_sociais">LinkedIn</a>
+      <div class="inDiv">
+         <h4>Ordenação de números aleatórios em um Array de modo crescente</h4>
+         <button id="ordenar">Ordenar</button>
+         <div id="visu"></div>
+         <div id="res"></div>
+      </div>
+      <br><br>
+      <div class="inDiv2">
+         <h4>Ordenação de números aleatórios em um Array de modo decrescente</h4>
+         <button id="ordenar2">Ordenar</button>
+         <div id="visu2"></div>
+         <div id="res2"></div>
+      </div>
+      <br><br>
+      <h2>Ordenar Matriz 3x3 Crescente</h2>
+      <button id="ordenarMatrizCrescente">Ordenar</button>
+      <div id="visuMatrizCrescente"></div>
+      <div id="resMatrizCrescente"></div>
+      <h2>Ordenar Matriz 3x3 Decrescente</h2>
+      <button id="ordenarMatrizDecrescente">Ordenar</button>
+      <div id="visuMatrizDecrescente"></div>
+      <div id="resMatrizDecrescente"></div>
+      <h2>Gerar e Somar Matrizes</h2>
+      <button id="gerarMatrizesBtn">Gerar Matrizes e Somar</button>  
+      <h2>Matriz 1:</h2>
+      <div id="matriz1"></div>
+      <h2>Matriz 2:</h2>
+      <div id="matriz2"></div>
+      <h2>Soma das Matrizes:</h2>
+      <div id="matriz3"></div>
+      <h2>Matriz de Números Aleatórios</h2>
+      <button id="gerarMatrizes1Btn">Gerar e Somar</button>  
+      <h2>Matriz:</h2>
+      <div id="matriz4"></div>
+      <h2>Soma dos elementos divisíveis por 3:</h2>
+      <div id="somaDivisiveisPor3"></div>
+      <h1>Matriz e soma dos numeros pares</h1>
+      <button id="gerarMatrizes2Btn">Gerar</button>  
+      <div id="matrixContainer"></div>
+      <h2>soma dos numeros pares: <span id="somaParContainer"></span></h2>
+      <h2>soma dos numeros Impares: <span id="somaImparContainer"></span></h2>
+      <h1>Algoritmos de Ordenação</h1>
+      <p>Insira uma lista de números separada por vírgula:</p>
+      <input type="text" id="numbersInput" placeholder="Ex: 4, 2, 7, 1, 3">  
+      <button onclick="sortNumbers()">Ordenar</button>  
+      <div class="results" id="results"></div>
+      <h1>Galeria de Imagens</h1>
+      <input type="text" id="imagemInput" placeholder="URL da imagem">  
+      <button id="adicionarBtn">Adicionar Imagem</button>  
+      <div id="galeria"></div>
+      <h1>Estruturas de Controle em JavaScript</h1>
+      <h2>1. Laço <code>for</code></h2>
+      <p>  
+         O laço <code>for</code> é usado para iterar sobre uma sequência, como uma matriz ou uma faixa de números. Ele permite executar um bloco de código várias vezes, uma vez para cada item na sequência.  
+      </p>
+      <pre><code>for (let i = 0; i &lt; 5; i++) {  
+         console.log(i);  
+     }</code></pre>
+      <p>  
+         O código acima imprime os números de 0 a 4.  
+      </p>
+      <h2>2. Laço <code>while</code></h2>
+      <p>  
+         O laço <code>while</code> executa um bloco de código enquanto uma condição for verdadeira. É útil quando não se sabe quantas iterações serão necessárias de antemão.  
+      </p>
+      <pre><code>let contador = 0;  
+     while (contador &lt; 5) {  
+         console.log(contador);  
+         contador++;  
+     }</code></pre>
+      <p>  
+         Neste exemplo, o código imprime os números de 0 a 4 até que o contador chegue a 5.  
+      </p>
+      <h2>3. Estruturas de Controle <code>if</code>, <code>else</code> e <code>else if</code></h2>
+      <p>  
+         Estas estruturas permitem que você tome decisões no seu código, executando diferentes blocos de código com base em condições.  
+      </p>
+      <pre><code>let numero = 10;  
+     
+     if (numero &gt; 0) {  
+         console.log("O número é positivo.");  
+     } else if (numero &lt; 0) {  
+         console.log("O número é negativo.");  
+     } else {  
+         console.log("O número é zero.");  
+     }</code></pre>
+      <p>  
+         No exemplo acima, o código verifica se <code>numero</code> é positivo, negativo ou zero, e imprime a mensagem correspondente.  
+      </p>
+      <h2>Resumo</h2>
+      <ul>
+         <li><code>for</code>: Permite iterar sobre uma sequência.</li>
+         <li><code>while</code>: Executa um bloco de código enquanto uma condição for verdadeira.</li>
+         <li><code>if</code>, <code>else</code>, <code>else if</code>: Usadas para tomar decisões com base em condições.</li>
+      </ul>
+      <footer>
+         <p>&copy; 2024 Desenvolvimento De Sistemas. Todos os direitos reservados.</p>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+         <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5548991799975" target="_blank">
+         <i class="fa fa-whatsapp"></i>
+         </a>
+         <p>Telefone: (11) 1234-5678</p>
+         <br>
+         <a href="https://github.com/eduardocorreadacruz" target="_blank" class="redes_sociais">GitHub</a>
+         <a href="https://www.linkedin.com/in/eduardo-correa-da-cruz-044b711a0/" target="_blank" class="redes_sociais">LinkedIn</a>
       </footer>
    </body>
 </html>
