@@ -71,7 +71,7 @@ function bubbleSort(arr) {
          }
       }
       // adiciona o estado atual do array ao array de passos
-      steps.push([arr])
+      steps.push([...arr])
    }
    return steps // retorna todos os passos do algoritmo
 }
@@ -126,7 +126,7 @@ function sortNumbers() {
 
    // Bubble Sort  
    resultsHtml += `<h3>Bubble Sort:</h3>`; // Adiciona o título para Bubble Sort
-   let bubbleSteps = bubbleSort([numbers]); // Chama o Bubble Sort e obtém os passos
+   let bubbleSteps = bubbleSort([...numbers]); // Chama o Bubble Sort e obtém os passos
    bubbleSteps.forEach((step, index) => {
       // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -134,7 +134,7 @@ function sortNumbers() {
 
    // Insertion Sort  
    resultsHtml += `<h3>Insertion Sort:</h3>`; // Adiciona o título para Insertion Sort
-   let insertionSteps = insertionSort([numbers]); // Chama o Insertion Sort e obtém os passos
+   let insertionSteps = insertionSort([...numbers]); // Chama o Insertion Sort e obtém os passos
    insertionSteps.forEach((step, index) => {
       // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -142,7 +142,7 @@ function sortNumbers() {
 
       // Selection Sort  
       resultsHtml += `<h3>Selection Sort:</h3>`; // Adiciona o título para Selection Sort
-      let selectionSteps = selectionSort([numbers]); // Chama o Selection Sort e obtém os passos
+      let selectionSteps = selectionSort([...numbers]); // Chama o Selection Sort e obtém os passos
       selectionSteps.forEach((step, index) => {
          // Adiciona cada passo ao HTML
          resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -417,7 +417,7 @@ function configurarBotaoOrdenarDecrescente() {
        array = ordenarDecrescente(array);
 
        let res2 = document.getElementById("res2");
-       res2.innerText = `Após ser ordenado: [${array}]`;
+       res2.textContent = `Após ser ordenado: [${array}]`;
     });
  }
 }
