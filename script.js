@@ -90,7 +90,7 @@ function insertionSort(arr) {
          j--; // decrementa o indice
       }
       arr[j + 1] = key; // insere a chave na posicao correta
-      steps.push([arr]); // adiciona o estado atual do array ao array de passos
+      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
    }
    return steps; // retorna todos os passos do algoritimo
 }
@@ -111,7 +111,7 @@ function selectionSort(arr) {
 
       // troca o menor elemento encontrado com o elemento na posicao atual
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      steps.push([arr]); // adiciona o estado atual do array ao array de passos
+      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
    }
    return steps; // retorna todos os passos do algoritimo
 }
@@ -185,7 +185,7 @@ function displayMatriz() {
       let row = document.createElement('tr');
       for (let j = 0; j < 7; j++) {
          let cell = document.createElement('td');
-         cell.innerText = matriz5[i][j];
+         cell.textContent = matriz5[i][j];
          row.appendChild(cell);
       }
       table.appendChild(row);
@@ -207,9 +207,9 @@ function somarPares() {
       }
    }
    let somaParContainer = document.getElementById('somaParContainer');
-   somaParContainer.innerText = somaPar;
+   somaParContainer.textContent = somaPar;
    let somaImparContainer = document.getElementById('somaImparContainer');
-   somaImparContainer.innerText = somaImpar;
+   somaImparContainer.textContent = somaImpar;
 }
 
 document.getElementById('gerarMatrizes2Btn').addEventListener('click', gerarMatriz4);
@@ -392,12 +392,12 @@ function configurarBotaoOrdenarCrescente() {
        }
 
        let visu = document.getElementById("visu");
-       visu.innerText = `Antes de ser ordenado: [${array}]`;
+       visu.textContent = `Antes de ser ordenado: [${array}]`;
 
        array = ordenarCrescente(array);
 
        let res = document.getElementById("res");
-       res.innerText = `Após ser ordenado: [${array}]`;
+       res.textContent = `Após ser ordenado: [${array}]`;
     });
  }
 }
@@ -412,7 +412,7 @@ function configurarBotaoOrdenarDecrescente() {
        }
 
        let visu2 = document.getElementById("visu2");
-       visu2.innerText = `Antes de ser ordenado: [${array}]`;
+       visu2.textContent = `Antes de ser ordenado: [${array}]`;
 
        array = ordenarDecrescente(array);
 
