@@ -71,7 +71,7 @@ function bubbleSort(arr) {
          }
       }
       // adiciona o estado atual do array ao array de passos
-      steps.push([...arr])
+      steps.push([arr])
    }
    return steps // retorna todos os passos do algoritmo
 }
@@ -90,7 +90,7 @@ function insertionSort(arr) {
          j--; // decrementa o indice
       }
       arr[j + 1] = key; // insere a chave na posicao correta
-      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
+      steps.push([arr]); // adiciona o estado atual do array ao array de passos
    }
    return steps; // retorna todos os passos do algoritimo
 }
@@ -111,7 +111,7 @@ function selectionSort(arr) {
 
       // troca o menor elemento encontrado com o elemento na posicao atual
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
+      steps.push([arr]); // adiciona o estado atual do array ao array de passos
    }
    return steps; // retorna todos os passos do algoritimo
 }
@@ -126,7 +126,7 @@ function sortNumbers() {
 
    // Bubble Sort  
    resultsHtml += `<h3>Bubble Sort:</h3>`; // Adiciona o título para Bubble Sort
-   let bubbleSteps = bubbleSort([...numbers]); // Chama o Bubble Sort e obtém os passos
+   let bubbleSteps = bubbleSort([numbers]); // Chama o Bubble Sort e obtém os passos
    bubbleSteps.forEach((step, index) => {
       // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -134,7 +134,7 @@ function sortNumbers() {
 
    // Insertion Sort  
    resultsHtml += `<h3>Insertion Sort:</h3>`; // Adiciona o título para Insertion Sort
-   let insertionSteps = insertionSort([...numbers]); // Chama o Insertion Sort e obtém os passos
+   let insertionSteps = insertionSort([numbers]); // Chama o Insertion Sort e obtém os passos
    insertionSteps.forEach((step, index) => {
       // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -142,7 +142,7 @@ function sortNumbers() {
 
       // Selection Sort  
       resultsHtml += `<h3>Selection Sort:</h3>`; // Adiciona o título para Selection Sort
-      let selectionSteps = selectionSort([...numbers]); // Chama o Selection Sort e obtém os passos
+      let selectionSteps = selectionSort([numbers]); // Chama o Selection Sort e obtém os passos
       selectionSteps.forEach((step, index) => {
          // Adiciona cada passo ao HTML
          resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
@@ -185,7 +185,7 @@ function displayMatriz() {
       let row = document.createElement('tr');
       for (let j = 0; j < 7; j++) {
          let cell = document.createElement('td');
-         cell.textContent = matriz5[i][j];
+         cell.innerText = matriz5[i][j];
          row.appendChild(cell);
       }
       table.appendChild(row);
@@ -207,9 +207,9 @@ function somarPares() {
       }
    }
    let somaParContainer = document.getElementById('somaParContainer');
-   somaParContainer.textContent = somaPar;
+   somaParContainer.innerText = somaPar;
    let somaImparContainer = document.getElementById('somaImparContainer');
-   somaImparContainer.textContent = somaImpar;
+   somaImparContainer.innerText = somaImpar;
 }
 
 document.getElementById('gerarMatrizes2Btn').addEventListener('click', gerarMatriz4);
@@ -392,12 +392,12 @@ function configurarBotaoOrdenarCrescente() {
        }
 
        let visu = document.getElementById("visu");
-       visu.textContent = `Antes de ser ordenado: [${array}]`;
+       visu.innerText = `Antes de ser ordenado: [${array}]`;
 
        array = ordenarCrescente(array);
 
        let res = document.getElementById("res");
-       res.textContent = `Após ser ordenado: [${array}]`;
+       res.innerText = `Após ser ordenado: [${array}]`;
     });
  }
 }
@@ -412,12 +412,12 @@ function configurarBotaoOrdenarDecrescente() {
        }
 
        let visu2 = document.getElementById("visu2");
-       visu2.textContent = `Antes de ser ordenado: [${array}]`;
+       visu2.innerText = `Antes de ser ordenado: [${array}]`;
 
        array = ordenarDecrescente(array);
 
        let res2 = document.getElementById("res2");
-       res2.textContent = `Após ser ordenado: [${array}]`;
+       res2.innerText = `Após ser ordenado: [${array}]`;
     });
  }
 }
