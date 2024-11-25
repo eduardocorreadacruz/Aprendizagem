@@ -1,120 +1,155 @@
-// ----------------------- CARROSSEL -----------------------
+// ----------------------- Carrossel -----------------------
+// variavel par a mostrar o slide inicial
 let currentSlide = 0;
 
-function showSlide(index) {
+// função para mostrar o slide que corresponde ao indice 
+function mostrarSlide(index) {
+   // obtem o elemento que contem todos os slides
    let slides = document.getElementById('slides');
+   // obtem o numero total de slides presentes
    let totalSlides = slides.children.length;
+
+   // verifica se o indice fornecido e maior ou igual ao numero total de slides, caso seja maior reinicia voltando para o slide 0
    if (index >= totalSlides) {
-      currentSlide = 0;
-   } else if (index < 0) {
-      currentSlide = totalSlides - 1;
+      currentSlide = 0
    } else {
-      currentSlide = index;
+      // caso contrario, atualiza o slide atual para o indice fornecido 
+      currentSlide = index
    }
+   // o valor negativo e usado para mover os slides para a esquerda o calculo (-currentSlide * 100) determina a porcentagem de deslocamento que nocaso e 100%
    slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
 }
 
-function nextSlide() {
-   showSlide(currentSlide + 1);
+// função para avancar para o proximo slide
+function proximoSlide() {
+   // chama a função mostrarSlide para mostrar o slide seguinte adicionando mais 1 no indice
+   mostrarSlide(currentSlide + 1);
 }
 
-setInterval(nextSlide, 3000);
+// define um intervalo que chama a função proximoSlide a cada 3000 milissegundos ou 3 segundos
+setInterval(proximoSlide, 3000);
 
-// ----------------------- GALLERIA DE IMAGENS -----------------------
+// ----------------------- Galeria de imagens -----------------------
+// função principal que inicializa a galeria de imagens
 function galeriaDeImagens() {
+   // adiciona um evento que ao clicar a função e chamada
    document.getElementById('adicionarBtn').addEventListener('click', function () {
+      // pega o valor do campo de entrada de imagem puxando a url que o usuario inseriu
       let imagemInput = document.getElementById('imagemInput');
-      let imagemUrl = imagemInput.value;
+      let imagemUrl = imagemInput.value; // url da imagem que o usuario inseriu
 
+      // cria um novo eelemento de imagem
       let novaImagem = document.createElement('img');
-      novaImagem.src = imagemUrl;
+      novaImagem.src = imagemUrl; // define a origem da nova imagem para o url que o usuario forneceu
 
+      // obtem o elemento que representa a galeria onde as imagens serao exibidas
       let galeria = document.getElementById('galeria');
+      // adiciona a nova imagem como um filho do elemento da galeria
       galeria.appendChild(novaImagem);
 
+      // limpa o campo de entrada de imagem apos adicionar a imagem
       imagemInput.value = '';
    });
 }
 
+// chama a função galeriaDeImagens para inicializar a funcionalidade
 galeriaDeImagens();
 
-// ----------------------- ALGORITMOS DE ORDENAÇÃO -----------------------
+// ----------------------- Algoritmos de ordenaçãp -----------------------
+
+// Função que implementa o algoritmo bubble sort
 function bubbleSort(arr) {
-   let steps = [];
-   let n = arr.length;
-   for (let i = 0; i < n - 1; i++) {
-      for (let j = 0; j < n - i - 1; j++) {
+   let steps = []; // array para armazenar os passos do algoritmo
+
+   // loop externo para controlar o numero de passagens
+   for (let i = 0; i < arr.length - 1; i++) {
+      // loop interno para comparar elementos
+      for (let j = 0; j < arr.length - i - 1; j++) {
+         // se o elemento atual e maior que o proximo vai inverter a ordem
          if (arr[j] > arr[j + 1]) {
-            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // troca os elementos
          }
       }
-      steps.push([...arr]);
+      // adiciona o estado atual do array ao array de passos
+      steps.push([...arr])
    }
-   return steps;
+   return steps // retorna todos os passos do algoritmo
 }
 
+// função que implementa o algoritmo insertion sort
 function insertionSort(arr) {
-   let steps = [];
+   let steps = []; // array para armazenar os passos do algoritimo
+
    for (let i = 1; i < arr.length; i++) {
-      let key = arr[i];
-      let j = i - 1;
+      let key = arr[i]; // o elemento a ser inserido na posicao correta
+      let j = i - 1; // indice do elemento anterior
+
+      // move os elementos que sao maiores que a chave +1
       while (j >= 0 && arr[j] > key) {
-         arr[j + 1] = arr[j];
-         j--;
+         arr[j + 1] = arr[j]; // move o elemento para a direita
+         j--; // decrementa o indice
       }
-      arr[j + 1] = key;
-      steps.push([...arr]);
+      arr[j + 1] = key; // insere a chave na posicao correta
+      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
    }
-   return steps;
+   return steps; // retorna todos os passos do algoritimo
 }
 
+// funcao que implementa o algoritmo selection sort
 function selectionSort(arr) {
-   let steps = [];
-   let n = arr.length;
-   for (let i = 0; i < n - 1; i++) {
-      let minIndex = i;
-      for (let j = i + 1; j < n; j++) {
+   let steps = []; // array para armazenar os passos do algoritimo
+   // loop para encontrar o menor elemento no restante do array
+   for (let i = 0; i < arr.length - 1; i++) {
+      let minIndex = i; // inicializa o indice do menor elemento
+
+      // loop para encontrar o menor elemento no array
+      for (let j = i + 1; j < arr.length; j++) {
          if (arr[j] < arr[minIndex]) {
-            minIndex = j;
+            minIndex = j; // atualiza o indice do menor elemento
          }
       }
 
+      // troca o menor elemento encontrado com o elemento na posicao atual
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      steps.push([...arr]);
+      steps.push([...arr]); // adiciona o estado atual do array ao array de passos
    }
-   return steps;
+   return steps; // retorna todos os passos do algoritimo
 }
 
+// Função principal que ordena os números e exibe os resultados
 function sortNumbers() {
+   // Obtém o valor do campo de entrada e divide os números em um array
    let input = document.getElementById('numbersInput').value;
    let numbers = input.split(',').map(num => parseFloat(num.trim()));
 
-   let resultsHtml = `<h2>Resultados:</h2>`;
+   let resultsHtml = `<h2>Resultados:</h2>`; // Inicializa a string HTML para os resultados
 
    // Bubble Sort  
-   resultsHtml += `<h3>Bubble Sort:</h3>`;
-   let bubbleSteps = bubbleSort([...numbers]);
+   resultsHtml += `<h3>Bubble Sort:</h3>`; // Adiciona o título para Bubble Sort
+   let bubbleSteps = bubbleSort([...numbers]); // Chama o Bubble Sort e obtém os passos
    bubbleSteps.forEach((step, index) => {
+      // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
    });
 
    // Insertion Sort  
-   resultsHtml += `<h3>Insertion Sort:</h3>`;
-   let insertionSteps = insertionSort([...numbers]);
+   resultsHtml += `<h3>Insertion Sort:</h3>`; // Adiciona o título para Insertion Sort
+   let insertionSteps = insertionSort([...numbers]); // Chama o Insertion Sort e obtém os passos
    insertionSteps.forEach((step, index) => {
+      // Adiciona cada passo ao HTML
       resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
    });
 
-   // Selection Sort  
-   resultsHtml += `<h3>Selection Sort:</h3>`;
-   let selectionSteps = selectionSort([...numbers]);
-   selectionSteps.forEach((step, index) => {
-      resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
-   });
-
-   document.getElementById('results').innerHTML = resultsHtml;
-}
-
+      // Selection Sort  
+      resultsHtml += `<h3>Selection Sort:</h3>`; // Adiciona o título para Selection Sort
+      let selectionSteps = selectionSort([...numbers]); // Chama o Selection Sort e obtém os passos
+      selectionSteps.forEach((step, index) => {
+         // Adiciona cada passo ao HTML
+         resultsHtml += `<div class="step">Passo ${index + 1}: [${step.join(', ')}]</div>`;
+      });
+   
+      document.getElementById('results').innerHTML = resultsHtml; // Exibe os resultados na página
+   }
 // ----------------------- GERAR MATRIZ IMPAR E PAR -----------------------
 let matriz5 = [
    [0, 0, 0, 0, 0, 0, 0, 0],
@@ -142,8 +177,8 @@ function gerarMatriz4() {
 }
 
 function displayMatriz() {
-   let matrixContainer = document.getElementById('matrixContainer');
-   matrixContainer.innerHTML = '';
+   let MatrizContainer = document.getElementById('MatrizContainer');
+   MatrizContainer.innerHTML = '';
 
    let table = document.createElement('table');
    for (let i = 0; i < 7; i++) {
@@ -155,7 +190,7 @@ function displayMatriz() {
       }
       table.appendChild(row);
    }
-   matrixContainer.appendChild(table);
+   MatrizContainer.appendChild(table);
    somarPares();
 }
 
@@ -427,32 +462,41 @@ function toggleMenu() {
  if (menu.classList.contains('active')) {
     content.style.marginLeft = "250px";
  } else {
-    content.style.marginLeft = "0";
+    content.style.marginLeft = "0px";
  }
 }
 
 // ----------------------- ABAS -----------------------
+// funcao para abrir as abas
 function openTabs(evt, tabsName) {
-   // Esconder todas as abas
+   // obter todos os elementos com a classe "tabcontent"
    let tabContent = document.getElementsByClassName("tabcontent");
+   
+   // loop para esconder todas as abas
    for (let i = 0; i < tabContent.length; i++) {
-      tabContent[i].style.display = "none";
+      // muda o estilo de display para "none" para esconder a aba
+      tabContent[i].style.display = "none"; // todas as abas ficam invisiveis
    }
 
-   // Remover a classe "active" de todos os botões de abas
+   // obter todos os elementos com a classe tablink
    let tabLinks = document.getElementsByClassName("tablink");
+   
+   // loop para remover a classe "active" de todos os botoes de abas
    for (let i = 0; i < tabLinks.length; i++) {
-      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+      // remove a classe "active" do botao atual
+      tabLinks[i].className = tabLinks[i].className.replace(" active", ""); // tira a classe active para que nenhum botao fique marcado
    }
 
-   // Mostrar a aba atual e adicionar a classe "active" ao botão que abriu a aba
-   document.getElementById(tabsName).style.display = "block";
-   evt.currentTarget.className += " active";
+   // mostrar a aba que foi selecionada
+   document.getElementById(tabsName).style.display = "block"; // muda o estilo da aba selecionada para "block" para que fique visivel
+
+   // adicionar a classe "active" ao botao que foi clicado
+   evt.currentTarget.className += " active"; // adiciona a classe active ao botao que chamou a funcao para mostrar que esta ativo
 }
 
-// Configurar a aba padrão ao carregar a página
+// configurar a aba padrao ao carregar a pagina
 document.addEventListener("DOMContentLoaded", function () {
-   document.getElementById("defaultOpen").click();
+   document.getElementById("defaultOpen").click(); // quando a pagina carrega, chama a aba "defaultOpen"
 });
 
 // ----------------------- FORMATAR MATRIZ PARA EXIBIÇÃO -----------------------
